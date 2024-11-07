@@ -1,3 +1,5 @@
+create extension if not exists "pgcrypto";
+
 create table fabricantes (
 	id uuid default gen_random_uuid() primary key,
 	nome varchar(100) not null,

@@ -1,3 +1,5 @@
+-- Mudar uuids nos inserts por uso em bancos de dados diferentes;
+
 insert into fabricantes (nome, pais_origem, ano_fundacao) values ('FIAT', 'Italia', '1899');
 insert into fabricantes (nome, pais_origem, ano_fundacao) values ('Renault', 'Franca', '1899');
 insert into fabricantes (nome, pais_origem, ano_fundacao) values ('Volkswagen', 'Alemanha', '1937');
@@ -6,16 +8,16 @@ insert into fabricantes (nome, pais_origem, ano_fundacao) values ('Ford', 'Estad
 
 select * from fabricantes;
 
-insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('3N2 dWNbrC Jh 767420', 'Kwid', '2018', 'branco', '8000', '37000', '8003b85c-595f-45ce-b1cc-3eb67a41e330');
-insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('1EX PdVghE jj Lu2700', 'Ranger Raptor', '2024', 'branco', '0', '436000', '648b06b8-8c1d-446b-a629-f03a33d63a14');
-insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('8aM UYPkRv 9S A86215', 'Gol Rallye', '2013', 'preto', '16000', '28000', '5cc19237-9ef4-4348-9e0a-69734c8ba65f');
-insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('7aG FyuCgw H2 px3336', 'XC60 Momentum', '2018', 'vermelho', '0', '162000', '39a9da15-3165-4aa6-bd47-637e2df119ee');
-insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('40C BUBWMC kT sE5540', 'Uno', '1994', 'vermelho', '40000', '10000', '1a9030a2-f203-4f42-929d-4c09e73fbea2');
+insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('3N2 dWNbrC Jh 767420', 'Kwid', '2018', 'branco', '8000', '37000', '032e9728-c977-49f6-a20f-08ebefd0e193');
+insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('1EX PdVghE jj Lu2700', 'Ranger Raptor', '2024', 'branco', '0', '436000', 'eff7a51e-d0db-4dd3-a4cb-a3b1c62cc6d7');
+insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('8aM UYPkRv 9S A86215', 'Gol Rallye', '2013', 'preto', '16000', '28000', '1ac6ed0f-048b-4d6f-9312-2d08a077087f');
+insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('7aG FyuCgw H2 px3336', 'XC60 Momentum', '2018', 'vermelho', '0', '162000', 'bd7f0efe-a7e5-4fff-8687-debc26c9372d');
+insert into veiculos (chassi, modelo, ano_fabricacao, cor, km, preco, fabricantes_id) values ('40C BUBWMC kT sE5540', 'Uno', '1994', 'vermelho', '40000', '10000', 'fdd8c895-cedf-4e17-ace3-ac82febd22b3');
 
 select * from veiculos;
 
-insert into manutencoes (data_manutencao, descricao, custo, veiculos_id) values ('2024-10-29','Troca da correia do alternador','540','05683748-d71b-4060-8b09-b8a41f040662'); --Kwid
-insert into manutencoes (data_manutencao, descricao, custo, veiculos_id) values ('2024-11-04','Torca de amortecedor traseiro','3400','4562a68e-b867-4d5e-ac21-291cc9801310'); --Gol Rallye
+insert into manutencoes (data_manutencao, descricao, custo, veiculos_id) values ('2024-10-29','Troca da correia do alternador','540','b64b8240-a4a9-4857-bcf4-07d88a4d5c50'); --Kwid;
+insert into manutencoes (data_manutencao, descricao, custo, veiculos_id) values ('2024-11-04','Torca de amortecedor traseiro','3400','4eecebc4-1de0-4262-b76f-a5582129c74d'); --Gol Rallye;
 
 select * from manutencoes;
 
@@ -32,7 +34,9 @@ insert into vendedores (nome, cpf, telefone, email, data_contratacao) values ('J
 
 select * from vendedores;
 
-insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('', '', '', '', '', '');
-insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('', '', '', '', '', '');
-insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('', '', '', '', '', '');
-insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('', '', '', '', '', '');
+insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('2024-04-18', '40686', 'Financiamento', 'b64b8240-a4a9-4857-bcf4-07d88a4d5c50', '0505d979-2ae8-453c-bdd8-c6f38e5ea79e', '25231588-6222-473a-8fc8-71097e2c1769'); -- Kwid, Joao, Carlos ;
+insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('2023-05-13', '25000', 'À vista', '4eecebc4-1de0-4262-b76f-a5582129c74d', '531e50c2-3add-41bb-be2b-ceedeba18031', '1f802893-94dc-496e-9d49-5ba4d6eaae4a'); -- Gol, Eduardo, Julia;
+insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('2023-09-18', '8000', 'À vista', '6740f446-a669-444d-ba3d-3eae6f7888da', '1255976d-eb79-4af4-bfec-0a424b33b58f', '3ff73e24-6444-4db3-8043-522ee6f34dc1'); -- Uno, Pedro, Manoel;
+insert into vendas (data_venda, valor_total, metodo_pagamento, veiculos_id, clientes_id, vendedores_id) values ('2022-07-04', '162000', 'Cartão de crédito', '00c90e65-b8d6-4421-8a84-68741ef843f6', 'e9904391-84a5-48de-ad85-91743d940cc0', '25231588-6222-473a-8fc8-71097e2c1769'); -- Xc60, Maria, Carlos;
+
+select * from vendas;
